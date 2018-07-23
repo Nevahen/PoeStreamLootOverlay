@@ -17,6 +17,10 @@ namespace PoEStreamLootOverlay
         /// <param name="data"></param>
         public void MakeImage(Dictionary<string, Currency> data)
         {
+
+            data = data.Where(item => item.Value.Enabled).ToDictionary(item => item.Key, item => item.Value);
+
+
             if(data.Count == 0)
             {
                 return;
@@ -29,7 +33,7 @@ namespace PoEStreamLootOverlay
             Graphics g = Graphics.FromImage(newImage);
 
             // Creating Background
-            Rectangle rect = new Rectangle(0, 0, 250, 150);
+            Rectangle rect = new Rectangle(0, 0, 120*data.Count, 150);
             SolidBrush blueBrush = new SolidBrush(Color.FromArgb(125,0,0,0));
             g.FillRectangle(blueBrush, rect);
 
@@ -41,8 +45,9 @@ namespace PoEStreamLootOverlay
                 Image tmpImage = Image.FromFile(entry.Value.Icon);
                 g.DrawImage(tmpImage, new Point((count * multiplier) + margin, margin));
 
+                // CHANGE THIS: Calculate string width and center it in a rectangle 
                 g.DrawString(entry.Value.Count.ToString(), new Font("Verdana", 24), new SolidBrush(Color.White)
-                    , new Point(20 + (count * 100), 100)
+                    , new Point(22 + (count * 100), 100)
                 );
 
                 count++;          

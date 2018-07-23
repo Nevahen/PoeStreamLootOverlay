@@ -25,7 +25,10 @@ namespace PoEStreamLootOverlay
         {
             InitializeComponent();
             currencyList = new CurrencyList();
-            currencyView.ItemsSource = CurrencyList.currencyList;
+            ExaltView.DataContext = CurrencyList.currencyList["Exalted Orb"];
+            DivineView.DataContext = CurrencyList.currencyList["Divine Orb"];
+            AnnulmentView.DataContext = CurrencyList.currencyList["Annulment Orb"];
+            ChaosView.DataContext = CurrencyList.currencyList["Chaos Orb"];
 
         }
 

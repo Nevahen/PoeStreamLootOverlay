@@ -13,7 +13,7 @@ namespace PoEStreamLootOverlay
 
         public string Name { get; set; }
         public string Icon { get; set; }
-        bool Enabled;
+        public bool Enabled { get; set; } = true;
 
         public event PropertyChangedEventHandler PropertyChanged;
 

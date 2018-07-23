@@ -8,21 +8,14 @@
         Title="PoEStreamLootOverlay" Height="450" Width="483.333">
     <Grid Background="#FF212121">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Button Content="Reset" HorizontalAlignment="Left" Margin="296.381,394,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Click="Button_Click_1"/>
         <Button Content="Settings" HorizontalAlignment="Left" Margin="296.381,369,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Click="Button_Click"/>
-        <ItemsControl
-            x:Name="currencyView" Grid.RowSpan="1"
-            >
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <local:CurrencyControl></local:CurrencyControl>
+        <local:CurrencyControl HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" x:Name="ExaltView"/>
+        <local:CurrencyControl HorizontalAlignment="Left" Margin="127,20,0,0" VerticalAlignment="Top" x:Name="DivineView"/>
+        <local:CurrencyControl HorizontalAlignment="Left" Margin="244,20,0,0" VerticalAlignment="Top" x:Name="AnnulmentView"/>
+        <local:CurrencyControl HorizontalAlignment="Left" Margin="363,20,0,0" VerticalAlignment="Top" x:Name="ChaosView"/>
 
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        
-        </ItemsControl>
     </Grid>
 </Window>
